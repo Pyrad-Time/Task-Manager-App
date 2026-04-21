@@ -7,6 +7,26 @@
     <title>Task Manager</title>
 </head>
 <body>
-    
+    <main class="container">
+        <h1 class="container__title">Task Manager</h1>
+
+        <input 
+        type="text" 
+        id="search"
+        placeholder="Search..."
+        >
+
+        <div class="filters">
+            <button data-filter="all" class="button">All</button>
+            <button data-filter="completed" class="button">Completed</button>
+            <button data-filter="pending" class="button">Pending</button>
+        </div>
+
+        <p id="status"></p>
+
+        <ul id="task-list"></ul>
+    </main>
+
+    <script src="./main.js"></script>
 </body>
 </html>
