@@ -8,7 +8,7 @@ const btn = [...button]
 
 
 let state = {
-    current: '',
+    current: "",
     tasks: [],
     status: 'all'
 }
@@ -30,33 +30,31 @@ function showTask(e) {
     p.textContent = e.completed
     list.append(li)   
     li.append(p)
+
+    console.log('KKKKKK')
+}
+
+
+function filterTask(e) {
+    let current = state.current.toLowerCase()    
+    let status = state.status
+    let apiTitle = e.title.toLowerCase()
+
+    const matchText = apiTitle.includes(current)
+
+    const matchStatus = 
+        status === "all" ||
+        (status === "completed" && e.completed) ||
+        (status === "pending" && !e.completed)
+
+    return matchText && matchStatus
 }
 
 function render() {
     list.textContent = ''
-
-    state.tasks.forEach(e => {
-        
-        if (e.completed === true) {
-            if(state.status === "completed") {
-                showTask(e)
-            }
-
-        }
-
-        if (!e.completed) {
-            if(state.status === "pending") {
-                showTask(e)
-            }
-        }
-
-        if(state.status === "all")
-            showTask(e)
-
-    })
-    
+    const filtered = state.tasks.filter(filterTask)
+    filtered.forEach(showTask)
 }
-
 
 btn.forEach(e => {
     e.addEventListener("click", (e) => {
@@ -66,8 +64,8 @@ btn.forEach(e => {
     })
 })
 
-input.addEventListener("keypress", (e) => {
-    state.current = Number(state.current + e.key)
-
+input.addEventListener("input", (e) => {
+    state.current = e.target.value 
+    render()
 })
 
