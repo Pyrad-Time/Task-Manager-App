@@ -6,8 +6,8 @@ const button = document.getElementsByTagName('button')
 
 const btn = [...button]
 
-import { state } from "./js/state.js"
-import { render } from "./js/render.js"
+import { state } from "./state.js"
+import { render } from "./render.js"
 
 
 
