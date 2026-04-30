@@ -4,6 +4,8 @@ export function showTask(task, list) {
     const btnEdit = document.createElement('button')
     const btnDel = document.createElement('button')
     const inputCheck = document.createElement('input')
+    const div1 = document.createElement('div')
+    const div2 = document.createElement('div')
 
     p.textContent = task.title
     btnEdit.textContent = "Edit"
@@ -12,11 +14,13 @@ export function showTask(task, list) {
 
 
     li.className = "task"
-    btnEdit.className = "btnTask"
-    btnDel.className = "btnTask"
+    btnEdit.className = "button__task"
+    btnDel.className = "button__task"
     
+
+
     list.append(li)   
-    li.append(inputCheck)
-    li.append(p)
-    li.append(btnEdit, btnDel)
+    div1.append(inputCheck, p)
+    div2.append(btnEdit, btnDel)
+    li.append(div1, div2)
 }
