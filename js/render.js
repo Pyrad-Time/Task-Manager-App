@@ -17,7 +17,6 @@ if(localStorage.getItem("tasks")) {
         render(list)
     }
     )
-    
 
 }
 
