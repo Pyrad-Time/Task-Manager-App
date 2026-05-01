@@ -15,7 +15,7 @@ export function setLocalStorage () {
 }
 
 export function getLocalStorage() {
-    const data = localStorage.getItem("tasks")  
+    const data = localStorage.getItem("state")  
 
     if(data) {
         state.tasks = JSON.parse(data)
@@ -23,12 +23,37 @@ export function getLocalStorage() {
 
 }
 
-btn.forEach(e => {
-    e.addEventListener("click", (e) => {
-        const data = e.target.dataset.filter
-        state.status = data
-        render(list)
-        getLocalStorage()
+function editTask (e) {  
+    const task = e.target.closest(".task")
+    const title = task.querySelector(".task__title")
+    console.log(title)
+ }
+
+
+list.addEventListener("click", (e) => {
+    const button = e.target.closest("button")
+    if(!button) return
+
+    if(button.dataset.action === "edit")
+        editTask(e)
+})
+
+
+btn.forEach(buttons => {
+    buttons.addEventListener("click", (e) => {
+        console.log(e)
+        if(e.currentTarget.dataset.filter) {
+            const data = e.target.dataset.filter
+            state.status = data
+            getLocalStorage()    
+            render(list)
+        }
+        if(e.currentTarget.dataset.action === "edit") {
+            editTask(e)
+            getLocalStorage()
+            render(list)
+        }
+        
     })
 })
 

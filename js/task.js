@@ -16,8 +16,13 @@ export function showTask(task, list) {
     li.className = "task"
     btnEdit.className = "button__task"
     btnDel.className = "button__task"
-    
+    inputCheck.className = "inputcheck__task"
+    div1.className = "div1"
+    div2.className = "div2"
+    p.className = "task__title"
 
+    btnEdit.dataset.action = "edit"
+    btnDel.dataset.action = "del"
 
     list.append(li)   
     div1.append(inputCheck, p)
