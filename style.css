@@ -102,10 +102,39 @@ button, input {
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    min-height: 3rem;
+    min-height: 3.5rem;
     background-color: #ebebeb;
     border-radius: .25rem;
     border: 1px black solid;
     margin-bottom: 1rem;
 }
 
+.div1 {
+    display: flex;
+}
+
+.inputcheck__task {
+    transform: scale(1.2);
+    position: relative;
+
+    left: .5rem;
+}
+
+.task__title {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    text-wrap: wrap;
+}
+
+.button__task {
+    color: #090909;
+    padding: 0.3em .7em;
+    font-size: .7rem;
+    border-radius: 0.5em;
+    background: #cccccc;
+    cursor: pointer;
+    border: 1px solid #c7c7c7;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    margin-right: .5rem;
+}
