@@ -2,7 +2,7 @@
 
 A simple task manager built with **Vanilla JavaScript**, focusing on state management, DOM manipulation, and data persistence.
 
-## 🚀 Features
+##  Features
 
 * Add, edit and delete tasks
 * Filter tasks by status (all, completed, pending)
@@ -10,7 +10,7 @@ A simple task manager built with **Vanilla JavaScript**, focusing on state manag
 * Persistent data using LocalStorage
 * Dynamic rendering based on application state
 
-## 🧠 Concepts Applied
+##  Concepts Applied
 
 * State-driven architecture
 * Array methods (`map`, `filter`, `includes`)
@@ -18,22 +18,22 @@ A simple task manager built with **Vanilla JavaScript**, focusing on state manag
 * DOM manipulation
 * Separation of concerns (modules)
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * HTML
 * CSS
 * JavaScript (ES6+)
 
-## 📦 Data Source
+##  Data Source
 
 Initial data fetched from:
 https://jsonplaceholder.typicode.com/todos
 
-## 💾 Persistence
+##  Persistence
 
 Tasks are saved in the browser using **LocalStorage**.
 
-## ▶️ How to Run
+##  How to Run
 
 1. Clone the repository
 2. Open `index.html` in your browser
@@ -50,7 +50,7 @@ This project was built as a learning exercise to practice core frontend concepts
 
 ---
 
-## 📈 Future Improvements
+##  Future Improvements
 
 * UI/UX improvements
 * Better editing experience (inline edit with blur/enter)
