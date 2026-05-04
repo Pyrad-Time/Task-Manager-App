@@ -1,3 +1,4 @@
+import { setLocalStorage } from "./main.js"
 import { render } from "./render.js"
 import { state } from "./state.js"
 const list = document.getElementById('task-list')
@@ -40,41 +41,44 @@ export function showTask(task, list) {
 
 export function editTask (e) {  
     const task = e.target.closest(".task")
+    const taskId = Number(task.id)
+
+    const existingInput = task.querySelector(".task__input")
+    if (existingInput) return
+
     const title = task.querySelector(".task__title")
+    if (!title) return
 
-    const inputData = document.createElement("input")
-    inputData.className = "task__input"
-    inputData.value = title.textContent
+    const input = document.createElement("input")
+    input.className = "task__input"
+    input.value = title.textContent
 
-    title.style.display = "none"
+    title.replaceWith(input)
+    input.focus()
 
-    task.append(inputData)
-
-    setTimeout(() => {
-        inputData.focus()
-    }, 0)
-
-    inputData.addEventListener('keydown', (e) => {
-        const taskId = Number(task.id)
-
+    input.addEventListener("keydown", (e) => {
         if(e.key === "Enter") {
-            state.tasks = state.tasks.map(task => {
-                if (task.id === taskId) {
-                    return {
-                        ...task,
-                        title: inputData.value
-                    }
+
+            state.tasks = state.tasks.map(t => {
+                if (t.id === taskId) {
+                    return { ...t, title: input.value }
                 }
-                return task
+                return t
             })
+
+            setLocalStorage()
             render(list)
         }
     })
-
- }
+}
 
  export function removeTask (e) {
     const task = e.target.closest(".task")
-    task.remove()
+    const taskId = Number(task.id)
+
+    state.tasks = state.tasks.filter(t => t.id !== taskId)
+
+    setLocalStorage()
+    render(list)
  }
 

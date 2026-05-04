@@ -81,7 +81,8 @@ button, input {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 2rem;  
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;  
 }
 
 .button__filter:hover {
@@ -137,4 +138,13 @@ button, input {
     transition: all 0.3s;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
     margin-right: .5rem;
+}
+
+.task__input {
+    position: relative;
+    left: 1rem;
+    min-width: 400px;
+    height: 1.5rem;
+    width: 100%;
+    padding: .5rem;
 }

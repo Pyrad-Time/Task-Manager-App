@@ -5,7 +5,7 @@ import { getLocalStorage } from "./main.js";
 import { setLocalStorage } from "./main.js";
 const list = document.getElementById('task-list')
 
-if(localStorage.getItem("tasks")) {
+if(localStorage.getItem("state")) {
     getLocalStorage()
     render(list)
 } else {

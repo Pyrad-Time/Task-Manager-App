@@ -11,7 +11,6 @@ import { render } from "./render.js"
 import { editTask } from "./task.js"
 import { removeTask } from "./task.js"
 
-
 export function setLocalStorage () {
     const tasks = localStorage.setItem("state", JSON.stringify(state.tasks))
 }
@@ -25,9 +24,6 @@ export function getLocalStorage() {
 
 }
 
-
-
-
 list.addEventListener("click", (e) => {
     const button = e.target.closest("button")
     if(!button) return
@@ -37,8 +33,6 @@ list.addEventListener("click", (e) => {
 
     if(button.dataset.action === "delete") 
         removeTask(e)
-
-    console.log(state.tasks)
 })
 
 
